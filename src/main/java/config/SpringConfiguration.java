@@ -1,10 +1,14 @@
 package config;
 
+import dto.Education;
+import dto.Institution;
 import dto.Person;
 import dto.Plant;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.Optional;
 
 /***
  * NOTE A configuration class is a special class in Spring applications that we
@@ -45,6 +49,65 @@ public class SpringConfiguration {
         Integer i = 140;
         return i;
     }
+
+    @Bean
+    String stringTest(){
+        String s = "foo";
+        return s;
+    }
+
+
+
+
+    @Bean
+    Education alEducation(){
+        Education alEducation = new Education(4, "Business");
+        return alEducation;
+    }
+
+    /***
+     * We are going to wire beans using a direct method call.
+     */
+
+    @Bean
+    Person alexPerson(){
+        Person p = new Person("Alexander","Fournier",Optional.of(alEducation()));
+        return p;
+
+    }
+
+
+    /***
+     * We are going to wire three beans together but instead of calling a method directly, we add a paramter
+     */
+
+
+    /// This should work but it doesn't. It's super fucking annoying.
+    @Bean
+    Optional<Institution> spencerInstitution(){
+        Optional<Institution> institution = Optional.of(new Institution("Santa Clara",30000));
+        return institution;
+    }
+
+    @Bean
+    Optional<Education> spencerEducation(Optional<Institution> institution){
+        Optional<Education> education = Optional.of(new Education(4,"Business"));
+        education.get().setInstitution(institution);
+        return education;
+    }
+
+    @Bean
+    Optional<Person> spencerPerson(Optional<Education> education){
+        Optional<Person> spencer = Optional.of(new Person("Spencer","Stall",education));
+        spencer.get().setEducation(education);
+        return spencer;
+    }
+
+
+
+
+
+
 
 
 }
