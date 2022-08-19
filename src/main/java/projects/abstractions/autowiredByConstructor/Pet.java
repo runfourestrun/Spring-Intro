@@ -1,4 +1,4 @@
-package autowiredByConstructor;
+package projects.abstractions.autowiredByConstructor;
 
 import org.springframework.stereotype.Component;
 

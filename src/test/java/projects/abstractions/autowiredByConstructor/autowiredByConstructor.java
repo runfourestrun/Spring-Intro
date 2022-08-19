@@ -1,13 +1,8 @@
-package autowiredByConstructor;
+package projects.abstractions.autowiredByConstructor;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import java.util.function.Consumer;
-import java.util.function.Function;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class autowiredByConstructor {
 

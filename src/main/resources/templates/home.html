@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<! -- equivalant to an import (for thymeleaf templating engine) -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">   ❶
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+
+<body>
+<h1>Welcome
+    <span th:style="'color:' + ${color}"               ❷
+          th:text="${username}"></span>!</h1>          ❷
+</body>
+
+</html>

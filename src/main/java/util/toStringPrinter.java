@@ -1,13 +1,10 @@
 package util;
 
-import autowiredByConstructor.Person;
-import autowiredByConstructor.Pet;
+import projects.abstractions.autowiredByConstructor.Person;
+import projects.abstractions.autowiredByConstructor.Pet;
 import circularDenendencyAntiPattern.Algae;
-import circularDenendencyAntiPattern.Coral;
 
-import java.util.function.Consumer;
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 
 /*** fucked up class. ***/

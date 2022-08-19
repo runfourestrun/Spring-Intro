@@ -1,0 +1,1 @@
+* Users Post their house for sale. We want to be able to send this post to a database,queue and another webservice for further persistence.
